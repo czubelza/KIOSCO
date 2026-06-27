@@ -76,7 +76,7 @@
                <children>
                   <ImageView fitHeight="380.0" fitWidth="377.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../nueva/Kiosco/src/kiosco/images/github.png" />
+                        <Image url="@../images/github.png" />
                      </image></ImageView>
                </children>
             </VBox>
