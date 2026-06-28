@@ -8,7 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
+
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.Node;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -92,15 +93,14 @@ public class ViewPrincipalController implements Initializable {
             System.err.println("No se pudo cargar el FXML: " + fxmlPath);
         }*/
      
-            try {
-               FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-               Node vista = loader.load();
-               System.out.println("Vista cargada: " + fxmlPath); // Depuración
-               borderPane.setCenter(vista);
-               System.out.println("Vista asignada al centro"); // Depuración
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
+          try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Node vista = loader.load();
+            borderPane.setCenter(vista);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar el FXML: " + fxmlPath);
+        }
     }
     
     
