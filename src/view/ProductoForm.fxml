@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="620.0" prefWidth="520.0" 
+            xmlns="http://javafx.com/javafx" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ProductoFormController">
+
+   <!-- TOP -->
+   <top>
+      <VBox alignment="CENTER" prefHeight="90.0" style="-fx-background-color: #f5f5f5;">
+         <children>
+            <Label fx:id="lblTitulo" text="Nuevo Producto">
+               <font>
+                  <Font size="26.0" name="System Bold"/>
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0"/>
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+
+   <!-- CENTER - Formulario -->
+   <center>
+      <VBox spacing="12.0" prefWidth="500.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Código:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtCodigo" prefWidth="300.0" promptText="Código único"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Nombre:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtNombre" prefWidth="300.0" promptText="Nombre del producto"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Descripción:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextArea fx:id="txtDescripcion" prefHeight="80.0" prefWidth="300.0" promptText="Descripción del producto"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Categoría:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <ComboBox fx:id="cbCategoria" prefWidth="300.0" promptText="Seleccione una categoría"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Precio Compra:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtPrecioCompra" prefWidth="300.0" promptText="0.00"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Precio Venta:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtPrecioVenta" prefWidth="300.0" promptText="0.00"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Stock Actual:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtStock" prefWidth="300.0" promptText="0"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Stock Mínimo:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtStockMinimo" prefWidth="300.0" promptText="0"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Proveedor:" prefWidth="110.0" style="-fx-font-weight: bold;"/>
+                  <TextField fx:id="txtProveedor" prefWidth="300.0" promptText="Nombre del proveedor"/>
+               </children>
+            </HBox>
+
+         </children>
+         <padding>
+            <Insets left="40.0" right="40.0" top="20.0" bottom="20.0"/>
+         </padding>
+      </VBox>
+   </center>
+
+   <!-- BOTTOM - Botones -->
+   <bottom>
+      <HBox alignment="CENTER" spacing="20.0" prefHeight="80.0">
+         <children>
+            <Button fx:id="btnGuardar" text="💾 Guardar" prefWidth="120.0" style="-fx-base: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="btnCancelar" text="Cancelar" prefWidth="120.0"/>
+         </children>
+         <padding>
+            <Insets bottom="25.0"/>
+         </padding>
+      </HBox>
+   </bottom>
+
+</BorderPane>

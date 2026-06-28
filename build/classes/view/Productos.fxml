@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
-</AnchorPane>
+<BorderPane prefHeight="650.0" prefWidth="950.0" 
+            xmlns="http://javafx.com/javafx" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ProductosController">
+
+   <!-- TOP -->
+   <top>
+      <VBox alignment="CENTER" prefHeight="130.0">
+         <children>
+            <Label text="Gestión de Productos">
+               <font>
+                  <Font size="28.0" name="System Bold"/>
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0"/>
+               </VBox.margin>
+            </Label>
+            
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <TextField fx:id="txtBuscar" promptText="Buscar por nombre o código..." prefWidth="320.0"/>
+                  <Button fx:id="btnBuscar" text="🔎 Buscar"/>
+                  <ComboBox fx:id="cbFiltro" promptText="Todas las categorías" prefWidth="180.0"/>
+                  <Button fx:id="btnNuevo" text="➕ Nuevo Producto" style="-fx-font-weight: bold; -fx-base: #4CAF50;"/>
+               </children>
+               <padding>
+                  <Insets left="40.0" right="40.0" top="15.0"/>
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+
+   <!-- CENTER - Tabla -->
+   <center>
+      <TableView fx:id="tableProductos">
+         <columns>
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="90.0"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="220.0"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="130.0"/>
+            <TableColumn fx:id="colPrecioVenta" text="Precio Venta" prefWidth="110.0"/>
+            <TableColumn fx:id="colStock" text="Stock" prefWidth="90.0"/>
+            <TableColumn fx:id="colStockMin" text="Stock Mín." prefWidth="90.0"/>
+            <TableColumn fx:id="colProveedor" text="Proveedor" prefWidth="150.0"/>
+         </columns>
+         <BorderPane.margin>
+            <Insets left="40.0" right="40.0" top="10.0"/>
+         </BorderPane.margin>
+      </TableView>
+   </center>
+
+   <!-- BOTTOM - Botones de acción -->
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="12.0" prefHeight="80.0">
+         <children>
+            <Button fx:id="btnModificar" text="✏️ Modificar"/>
+            <Button fx:id="btnEliminar" text="🗑 Eliminar"/>
+            <Button fx:id="btnRefrescar" text="🔄 Actualizar Tabla"/>
+         </children>
+         <padding>
+            <Insets left="40.0" bottom="25.0"/>
+         </padding>
+      </HBox>
+   </bottom>
+
+</BorderPane>
