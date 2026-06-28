@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Region;
 /**
  * FXML Controller class
  *
@@ -83,28 +84,20 @@ public class ViewPrincipalController implements Initializable {
 
     // Método para cargar vistas en el centro
     private void cargarVista(String fxmlPath) {
-     /*   try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Node vista = loader.load();
-            borderPane.setCenter(vista);
-        } catch (IOException e) {
-            e.printStackTrace();
-              // Muestra un mensaje de error para depurar
-            System.err.println("No se pudo cargar el FXML: " + fxmlPath);
-        }*/
-     
-          try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Node vista = loader.load();
-            borderPane.setCenter(vista);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error al cargar el FXML: " + fxmlPath);
-        }
+        try {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+           Node vista = loader.load();
+
+      
+
+           borderPane.setCenter(vista);
+       } catch (IOException e) {
+           e.printStackTrace();
+       }   
     }
     
     
-   
+    
     // Método para recibir el nombre de usuario desde el login
     public void initData(String username) {
         lblUsuario.setText("Bienvenido, " + username);
@@ -113,6 +106,7 @@ public class ViewPrincipalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         // Inicialización básica
     }
     
